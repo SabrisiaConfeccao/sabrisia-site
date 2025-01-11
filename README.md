@@ -15,21 +15,28 @@ Bem-vindo ao repositório do site de **Sabrísia Confecção**! Este projeto uti
 Siga os passos abaixo para rodar o projeto em sua máquina local:
 
 1. Clone o repositório:
-  ```bash
-  git clone https://github.com/seu-usuario/sabrisia-site.git
-  ```
+
+    ```bash
+    git clone https://github.com/seu-usuario/sabrisia-site.git
+    ```
+
 2. Navegue até o diretório do projeto:
-  ```bash
-  cd sabrisia-site
-  ```
+  
+    ```bash
+    cd sabrisia-site
+    ```
+  
 3. Instale as dependências:
-  ```bash
-  npm install
-  ```
+
+    ```bash
+    npm install
+    ```
+
 4. Inicie o servidor de desenvolvimento:
-  ```bash
-  npm run dev
-  ```
+
+    ```bash
+    npm run dev
+    ```
 
 O projeto estará rodando em `http://localhost:3000`.
 
