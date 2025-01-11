@@ -1,5 +1,5 @@
 
-# Site Sabrísia Confecção 👗👚🧵
+# Site Sabrísia Confecção 👗👚🧵 
 
 Bem-vindo ao repositório do site de **Sabrísia Confecção**! Este projeto utiliza diversas tecnologias modernas para criar uma experiência web incrível.
 
