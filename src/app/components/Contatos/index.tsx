@@ -1,9 +1,7 @@
-import { GridContainer } from '../GridContainer';
 
 export function Contatos() {
   return (
-    <GridContainer className="h-screen overflow-auto mt-4 p-8">
-      <h1 className="text-4xl text-center font-bold m-4">Contatos</h1>
+    <section className="mt-4 p-4">
       <div className="flex items-center justify-between w-full p-8">
         <section className="flex flex-col justify-between h-[calc(70vh-4.5rem)] w-1/2">
           <div className="bg-white h-[48%] p-4 rounded shadow-md shadow-green-600">
@@ -31,6 +29,6 @@ export function Contatos() {
           </aside>
         </section>
       </div>
-    </GridContainer>
+    </section>
   );
 }

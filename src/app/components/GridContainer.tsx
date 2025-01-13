@@ -6,9 +6,9 @@ interface GridContainerProps {
 }
 
 export function GridContainer({ children, className } : GridContainerProps) {
-  return <section 
+  return <main 
           className={`${className} w-full max-w-container mx-auto px-3`}
           >
             {children}
-          </section>;
+          </main>;
 }
