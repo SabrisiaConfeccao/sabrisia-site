@@ -9,22 +9,22 @@ const itemsMenu = [
     title: 'Início'
   },
   {
-    url: '#Sobre',
+    url: '/sobre',
     title: 'Sobre'
   },
   {
-    url: '#Produtos',
-    title: 'Produtos'
+    url: '/multimarcas',
+    title: 'Multimarcas'
   },
   {
-    url: '#Contatos',
-    title: 'Contatos'
+    url: '/fardamentos',
+    title: 'Fardamentos'
   }
 ]
 
 export function Header() {
   return (
-    <header className="fixed w-full top-0 z-50 flex items-center">
+    <header className="sticky w-full top-0 z-50 flex items-center mb-4">
       <GridContainer className='flex items-center justify-between border-b-2 border-green-600'>
         <Link href="/"
           className="flex items-center gap-10"
@@ -34,6 +34,7 @@ export function Header() {
             alt='Logo Sabrísia'
             width={150}
             height={50}
+            className="h-auto"
           />
         </Link>
         <nav className="flex items-center gap-8">
