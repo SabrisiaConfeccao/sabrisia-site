@@ -5,86 +5,61 @@ import Link from 'next/link';
 import { GridContainer } from '../GridContainer';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 
 export function Home() {
   return (
     <>
       <Header />
-      <GridContainer className="flex items-center h-[calc(100vh-10rem)]">
-        <section className="flex flex-col justify-between h-1/2 w-1/2">
+      <GridContainer className="flex flex-col justify-center items-center gap-16 h-screen md:grid md:grid-cols-2 md:gap-0 md:place-items-center md:h-[calc(100vh-9rem)]">
+        <section className="flex flex-col justify-between pl-3 md:space-y-10">
           <div className="w-full">
-            <h1 className="text-6xl font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
               Inspirada em{' '}
               <span className="text-green-600 font-serif">você</span>
               <div className="h-1 w-full bg-gradient-to-r from-green-600 to-transparent rounded-full my-4"></div>
             </h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-              nam debitis, id exercitationem asperiores culpa modi? Similique
-              architecto, nam, earum fugiat ipsam dolores minima atque quo id
-              maxime hic accusantium!
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-between h-1/2">
-            <div className="flex space-x-14 mt-4">
-              <Link
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
-                  alt="Ícone-Instagram"
-                  width={80}
-                  height={80}
-                />
-              </Link>
-              <Link
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
-                  alt="Ícone-Facebook"
-                  width={80}
-                  height={80}
-                />
-              </Link>
-              <Link
-                href="https://www.tiktok.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tiktok.svg"
-                  alt="Ícone-TikTok"
-                  width={80}
-                  height={80}
-                />
-              </Link>
-              <Link
-                href="https://www.whatsapp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
-                  alt="Ícone-WhatsApp"
-                  width={80}
-                  height={80}
-                />
-              </Link>
+            <div className="h-1/3 mt-3">
+              <p className="flex h-full w-auto text-base md:text-lg lg:text-xl">
+                Explore a elegância e o conforto das coleções exclusivas da
+                Sabrísia Confecção. Descubra nossas novidades em multimarcas e
+                fardamentos de todos os tipos, perfeitas para qualquer ocasião.
+                Cada peça é inspirada em você!
+              </p>
             </div>
           </div>
+          <div className="hidden md:flex justify-around items-center text-5xl space-x-4">
+            <Link
+              href="https://www.instagram.com/sabrisiaconfeccoes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+            >
+              <FaInstagram className="rounded-lg hover:text-pink-600 transition-transform transform hover:scale-110 hover:shadow-pink-500/50" />
+            </Link>
+            <Link
+              href="https://www.facebook.com/sabrisiaconfeccoes"
+              target="_blank"
+            >
+              <FaFacebook className="rounded-full hover:text-blue-700 transition-transform transform hover:scale-110 hover:shadow-blue-600/50" />
+            </Link>
+            <Link href={'#'} target="_blank">
+              <FaTiktok className="hover:text-gray-800 transition-transform transform hover:scale-110 hover:shadow-gray-800/50" />
+            </Link>
+            <Link
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=5579998240775"
+              target="_blank"
+            >
+              <FaWhatsapp className="rounded-lg hover:text-green-600 transition-transform transform hover:scale-110 hover:shadow-green-500/50" />
+            </Link>
+          </div>
         </section>
-        <aside className="flex justify-center w-1/2 mt-4">
+        <aside className="relative flex justify-center items-center w-[300] md:w-[370] z-0">
           <Image
             src="/imagem-home.jpg"
             alt="Sobre"
-            width={300}
+            width={400}
             height={100}
-            className="rounded-full w-auto shadow-md shadow-green-600 object-fill"
+            className="rounded-full shadow-md shadow-green-600 object-fill h-auto"
+            priority={true}
           />
         </aside>
       </GridContainer>
