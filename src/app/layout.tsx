@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sabrísia Confecção",
-  description: "Sabrísia Confecção oferece moda feminina, masculina e infantil exclusiva, elegante e moderna, além de multimarcas. Explore nossa coleção de vestidos, saias, calças, blusas e acessórios feitos com alta qualidade. Compre online e desfrute de promoções especiais. Sabrísia Confecção - Inspirada em você.",
+  description: "Explore a elegância e o conforto das coleções exclusivas da Sabrísia Confecção. Descubra nossas novidades em multimarcas e fardamentos de todos os tipos, perfeitas para qualquer ocasião. Cada peça é inspirada em você!",
+  keywords: ["Sabrísia Confecção", "moda", "moda feminina", "moda masculina", "moda infantil", "coleções exclusivas", "multimarcas", "fardas", "fardamentos", "fardamento escolar", "conforto", "elegância", "looks", "ropa de qualidade", "moda para qualquer ocasião"]
 };
 
 export default function RootLayout({
