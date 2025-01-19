@@ -1,52 +1,104 @@
-import Image from "next/image"
-import { GridContainer } from "../GridContainer"
-import { ItemMenu } from "./itemMenu"
-import Link from "next/link"
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { FaBars, FaTimes } from "react-icons/fa";
+import { ItemMenu } from './itemMenu';
 
 const itemsMenu = [
   {
     url: '/',
-    title: 'Início'
+    title: 'Início',
   },
   {
     url: '/sobre',
-    title: 'Sobre'
+    title: 'Sobre',
   },
   {
     url: '/multimarcas',
-    title: 'Multimarcas'
+    title: 'Multimarcas',
   },
   {
     url: '/fardamentos',
-    title: 'Fardamentos'
-  }
-]
+    title: 'Fardamentos',
+  },
+];
 
 export function Header() {
+  const [navOpen, setNavOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const pathname = usePathname();
+
+  const toggleNav = () => {
+    setNavOpen(!navOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky w-full top-0 z-50 flex items-center mb-4">
-      <GridContainer className='flex items-center justify-between border-b-2 border-green-600'>
-        <Link href="/"
-          className="flex items-center gap-10"
-        >
+    <header className="sticky w-full top-0 z-50 flex items-center">
+      <motion.section 
+        className={`w-full max-w-container mx-auto px-3 flex items-center justify-between ${scrolled ? 'border-b-2 border-green-600' : ''}`}
+        transition={{ duration: 0.5 }}
+      >
+        <Link href="/" className="flex items-center gap-10">
           <Image
-            src='/logo-sabrisia.svg'
-            alt='Logo Sabrísia'
+            src="/logo-sabrisia.svg"
+            alt="Logo Sabrísia"
             width={150}
-            height={50}
-            className="h-auto"
+            height={100}
+            className="h-auto w-[150]"
+            priority={true}
           />
         </Link>
-        <nav className="flex items-center gap-8">
-          <ul className="flex gap-4">
+        <nav className="flex items-center gap-8 text-xl">
+          <ul className="hidden md:flex gap-4">
             {itemsMenu.map((item, index) => (
               <li key={index}>
-                <ItemMenu url={item.url} title={item.title} />
+                <ItemMenu 
+                  url={item.url} 
+                  title={item.title}
+                  active={pathname === item.url}
+                />
               </li>
             ))}
           </ul>
+          <button onClick={toggleNav} className={`md:hidden text-3xl ${navOpen ? 'text-white' : ''} z-50`}>
+            {navOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </nav>
-      </GridContainer>
+      </motion.section>
+      {navOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center z-40">
+          <ul className="flex flex-col gap-4 text-white text-4xl">
+            {itemsMenu.map((item, index) => (
+              <li key={index}>
+                <ItemMenu 
+                  url={item.url} 
+                  title={item.title}
+                  active={pathname === item.url}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
-  )
+  );
 }
